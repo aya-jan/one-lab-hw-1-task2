@@ -10,7 +10,7 @@ import Foundation
 class Storage {
     static let shared = Storage ()
     
-    var user = UserModel(name: "Мария", surname: "Атрисова", email: "maria.atrisova@gmail.com", photo: "catimage")
+    var user = UserModel(name: "Мария", surname: "Атрисова", email: "maria.atrisova@gmail.com", photo: "Rectangle 799")
     
     var profileTableItems =
     [ProfileTableModel(labelText: "Push уведомления", type: .switching),

@@ -34,8 +34,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.snp.makeConstraints{
             $0.edges.equalToSuperview()
         }
-        tableView.register(ProfileTableViewCell.self, forCellReuseIdentifier: ProfileTableViewCell.identifier)
         tableView.register(ProfileTableHeader.self, forHeaderFooterViewReuseIdentifier: ProfileTableHeader.identifier)
+        tableView.register(ProfileTableViewCell.self, forCellReuseIdentifier: ProfileTableViewCell.identifier)
+      
         tableView.dataSource = self
         tableView.delegate = self
         

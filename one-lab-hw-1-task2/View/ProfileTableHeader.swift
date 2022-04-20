@@ -14,11 +14,13 @@ class ProfileTableHeader : UITableViewHeaderFooterView {
     
     private let userImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleToFill
         imageView.layer.borderWidth = 1.0
         imageView.layer.masksToBounds = false
         imageView.layer.cornerRadius = imageView.frame.size.width/2
-        imageView.clipsToBounds = true
+       // imageView.clipsToBounds = true
+      //  imageView.layer.size = 100
+        
         return imageView
     }()
     
@@ -37,6 +39,7 @@ class ProfileTableHeader : UITableViewHeaderFooterView {
         userImageView.image = UIImage(named: usermodel.photo)
         nameSurnameLabel.text = usermodel.name + " " + usermodel.surname
         emailLabel.text = usermodel.email
+      //  userImageView.size
         
         self.contentView.addSubview(userImageView)
         userImageView.snp.makeConstraints{
@@ -45,13 +48,13 @@ class ProfileTableHeader : UITableViewHeaderFooterView {
         }
         self.contentView.addSubview(nameSurnameLabel)
         nameSurnameLabel.snp.makeConstraints{
-            $0.top.equalTo(userImageView).offset(10)
+            $0.top.equalTo(userImageView.snp.bottom).offset(10)
             $0.centerX.equalToSuperview()
         }
         
         self.contentView.addSubview(emailLabel)
         emailLabel.snp.makeConstraints{
-            $0.top.equalTo(nameSurnameLabel).offset(10)
+            $0.top.equalTo(nameSurnameLabel.snp.bottom).offset(10)
             $0.centerX.equalToSuperview()
         }
         
